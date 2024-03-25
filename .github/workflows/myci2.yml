@@ -1,0 +1,13 @@
+name: "My CI"
+on: [workflow_dispatch]
+
+jobs:
+  ci:
+    name: "CI"
+    runs-on: ubuntu-latest
+    container: springci/spring-framework-ci:5.3.x
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Build"
+        run: ./gradlew -Dorg.gradle.internal.launcher.welcomeMessageEnabled=false -Porg.gradle.java.installations.fromEnv=JDK11,JDK15 -PmainToolchain=${MAIN_TOOLCHAIN} -PtestToolchain=${TEST_TOOLCHAIN} --no-daemon --max-workers=4 check
+      

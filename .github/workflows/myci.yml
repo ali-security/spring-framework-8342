@@ -1,9 +1,9 @@
 name: "My CI"
-on: [push, pull_request]
+on: [workflow_dispatch]
 
 jobs:
   ci:
-    name: "Validation"
+    name: "CI"
     runs-on: ubuntu-latest
     container: springci/spring-framework-ci:5.3.x
     steps:
