@@ -1,9 +1,9 @@
-name: "My CI"
+name: "My CI2"
 on: [workflow_dispatch]
 
 jobs:
   ci:
-    name: "CI"
+    name: "CI2"
     runs-on: ubuntu-latest
     container: springci/spring-framework-ci:5.3.x
     steps:
