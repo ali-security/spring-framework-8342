@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Build"
-        run: ./gradlew build
+        run: ./gradlew build | tee build.log
+      - name: "Show results"
+        run: find . -name index.html | xargs -I {} echo "file://{}"
