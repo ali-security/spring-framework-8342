@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Build"
-        run: ./gradlew build | tee build.log
+        run: ./gradlew build
       - name: "Show results"
-        run: find . -name index.html | xargs cat
+        run: find . -name index.html -type f -print0 | xargs -0 -I{} sh -c 'echo {}; cat {}; echo'
