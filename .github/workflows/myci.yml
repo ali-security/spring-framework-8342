@@ -11,4 +11,4 @@ jobs:
       - name: "Build"
         run: ./gradlew build | tee build.log
       - name: "Show results"
-        run: find . -name index.html | xargs -I {} echo "file://{}"
+        run: find . -name index.html | xargs cat
