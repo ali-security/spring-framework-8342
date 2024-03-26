@@ -170,7 +170,7 @@ class DataBinderTests {
 	}
 
 	@Test
-	void testBindingNoErrorsWithIgnoreInvalid() {
+	void testBindingNoErrorsWithIgnoreInvalid() throws BindException {
 		TestBean rod = new TestBean();
 		DataBinder binder = new DataBinder(rod, "person");
 		binder.setIgnoreInvalidFields(true);
