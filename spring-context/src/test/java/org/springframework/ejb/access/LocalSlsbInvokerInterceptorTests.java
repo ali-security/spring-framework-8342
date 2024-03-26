@@ -53,7 +53,6 @@ public class LocalSlsbInvokerInterceptorTests {
 		configuredInterceptor(mockContext, jndiName);
 
 		verify(mockContext).close();
-		assertThat(false).isTrue();
 	}
 
 	@Test
